@@ -1,0 +1,1 @@
+Documentation repository for the Photpipe package, housed on [ReadTheDocs](https://photpipe.readthedocs.io/en/latest).

@@ -9,6 +9,7 @@ Welcome to Photpipe!
    :caption: Getting Started
 
    install
+   examples
    errors
    publications
 

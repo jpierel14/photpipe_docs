@@ -8,7 +8,7 @@ This is a very typical error message::
 	ERROR: Parameter SW_UPDATEFIELDCENTERSFILE not found
 	Execution stopped
 
-This means that the current parameter file is missing `SW_UPDATEFIELDCENTERSFILE`. This is a safeguard to ensure that the current `pipeline.params`::
+This means that the current parameter file is missing ``SW_UPDATEFIELDCENTERSFILE``. This is a safeguard to ensure that the current ``pipeline.params``::
 
 	arest@plhstproc1(KPmosaic,,bash)% echo $PIPE_PARAMS
 	/ifs/cs/projects/armin1/pipe/v20.0/photpipe/config/KPmosaic1.1/LEGAL/pipeline_1.params

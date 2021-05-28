@@ -3,6 +3,27 @@
 Welcome to Photpipe!
 ========================================
 
+.. figure:: _static/header.png
+    :width: 600px
+    :align: center
+    :height: 300px
+    :alt: alternate text
+    :figclass: align-left
+
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
 
 .. toctree::
    :maxdepth: 2
@@ -12,10 +33,5 @@ Welcome to Photpipe!
    examples
    errors
    publications
+   contributors
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

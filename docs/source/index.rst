@@ -32,6 +32,7 @@ Welcome to Photpipe!
    install
    examples
    errors
+   stages
    publications
    contributors
 

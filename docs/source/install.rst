@@ -10,7 +10,10 @@ Historically, we used tcsh. However, recently, we have moved over to bash shell 
 Astroconda
 ==========
 
-We recommend using `astroconda to install <http://astroconda.readthedocs.io/en/latest/installation.html>`_ an appropriate environment. If you are installing photpipe on Mac, then an Anaconda (or miniconda) installation is *required*. 
+We recommend using `astroconda to install <http://astroconda.readthedocs.io/en/latest/installation.html>`_ an appropriate environment. If you are installing photpipe on Mac, then an Anaconda (or miniconda) installation is *required*, and you should make sure that your environment variable ``CONDA_PREFIX`` is set to the location of the base anaconda directory, for example::
+
+   echo $CONDA_PREFIX
+   /opt/miniconda3 
 
 - If you use the WCSNONLIN stage (nonlinear WCS), you need to install the `Legacy Software Stack with Iraf <https://astroconda.readthedocs.io/en/latest/installation.html#iraf-install>`_ and python 2.7
 - Otherwise we use either the `standard astroconda installation <https://astroconda.readthedocs.io/en/latest/installation.html#standard-install>`_ with the latest python 3.X, or the `STScI pipeline software stack <https://astroconda.readthedocs.io/en/latest/installation.html#pipeline-install-jump>`_
@@ -116,7 +119,6 @@ On Mac, you can check for ``gcc`` in the same way as above. On newer systems, yo
 It's recommended that you add the last line of the above to your ``~/.bashrc`` file, but it's not required. Next, you need `XQuartz <https://www.xquartz.org/>`_ installed. With the above complete, enter the c code directory and install the code::
 
     cdc
-    make clean
     make install
 
 Photpipe should now be installed!

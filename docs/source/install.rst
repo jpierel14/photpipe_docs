@@ -108,8 +108,11 @@ On Mac, you can check for ``gcc`` in the same way as above. On newer systems, yo
 
    mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
    $HOME/homebrew/bin/brew install gcc
+   cd $HOME/homebrew/bin
+   ln -s gcc-11 gcc
+   ln -s gcc-11 cc
 
-You can also just add the ``brew`` executable to your ``PATH`` in your ``~/.bashrc`` file instead of using the full path to ``brew``. With the above complete, enter the c code directory and install the code::
+This assumes you've installed gcc version 11, you can replace 11 with the version you've installed if this is not the case. You can also just add the ``brew`` executable to your ``PATH`` in your ``~/.bashrc`` file instead of using the full path to ``brew``. With the above complete, enter the c code directory and install the code::
 
     cdc
     make install

@@ -10,10 +10,10 @@ Historically, we used tcsh. However, recently, we have moved over to bash shell 
 Astroconda
 ==========
 
-We recommend using `astroconda to install <http://astroconda.readthedocs.io/en/latest/installation.html>`_ an appropriate environment.
+We recommend using `astroconda to install <http://astroconda.readthedocs.io/en/latest/installation.html>`_ an appropriate environment. If you are installing photpipe on Mac, then an Anaconda (or miniconda) installation is *required*. 
 
 - If you use the WCSNONLIN stage (nonlinear WCS), you need to install the `Legacy Software Stack with Iraf <https://astroconda.readthedocs.io/en/latest/installation.html#iraf-install>`_ and python 2.7
-- Otherwise twe use either the `standard astroconda installation <https://astroconda.readthedocs.io/en/latest/installation.html#standard-install>`_ with the latest python 3.X, or the `STScI pipeline software stack <https://astroconda.readthedocs.io/en/latest/installation.html#pipeline-install-jump>`_
+- Otherwise we use either the `standard astroconda installation <https://astroconda.readthedocs.io/en/latest/installation.html#standard-install>`_ with the latest python 3.X, or the `STScI pipeline software stack <https://astroconda.readthedocs.io/en/latest/installation.html#pipeline-install-jump>`_
 - Make sure astropy and matplotlib are available
 
 Photpipe
@@ -23,7 +23,7 @@ Photpipe is on bitbucket, make an account and ask A. Rest to add you to the repo
 
    git clone https://arest@bitbucket.org/arest/photpipe.git
 
-This command will put Photpipe into the current directory ``<pipedir>/photpipe``.
+This command will put Photpipe into the current directory ``<pipedir>/photpipe``. 
 
 Inititalization
 ===============
@@ -93,6 +93,28 @@ alias example for LMC light echoes::
    /ifs/cs/projects/armin1/pipe/v20.0/photpipe/config/DECAMNOAO/LE
    arest@plhstproc1(le LMC,noao,bash)% cddata
    /ifs/cs/projects/armin1/data/v20.0/DECAMNOAO/LElmc
+
+
+Compiling C Code
+================
+
+The first thing you must make sure of is that you have a ``gcc`` compiler installed. On linux this will likely be the case, but you can check with::
+
+   gcc --version
+
+If ``gcc`` is not installed, follow the directions `here <https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04/>`_. 
+
+On Mac, you can check for ``gcc`` in the same way as above. On newer systems, you will not get an error regardless but you may find that ``gcc`` has been aliased to ``clang``, which will not succeed. If this is the case, using ``homebrew`` to install gcc is recommended. Simply ``cd`` to the location you would like ``homebrew`` installed (maybe ``$HOME``, assumed below), and run the following::
+
+   mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+   $HOME/homebrew/bin/brew install gcc
+
+You can also just add the ``brew`` executable to your ``PATH`` in your ``~/.bashrc`` file instead of using the full path to ``brew``. With the above complete, enter the c code directory and install the code::
+
+    cdc
+    make install
+
+Photpipe should now be installed!
 
 
 

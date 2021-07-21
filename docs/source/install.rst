@@ -102,20 +102,21 @@ The first thing you must make sure of is that you have a ``gcc`` compiler instal
 
    gcc --version
 
-If ``gcc`` is not installed, follow the directions `here <https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04/>`_. 
+If ``gcc`` is not installed, follow the directions `here <https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04/>`_. Photpipe compiles on ``gcc`` version 7, but not on version 11. 
 
 On Mac, you can check for ``gcc`` in the same way as above. On newer systems, you will not get an error regardless but you may find that ``gcc`` has been aliased to ``clang``, which will not succeed. If this is the case, using ``homebrew`` to install gcc is recommended. Simply ``cd`` to the location you would like ``homebrew`` installed (maybe ``$HOME``, assumed below), and run the following::
 
    mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
    cd $HOME/homebrew/bin
-   brew install gcc
-   ln -s gcc-11 gcc
-   ln -s gcc-11 cc
+   brew install gcc@7
+   ln -s gcc-7 gcc
+   ln -s gcc-7 cc
    export PATH=$HOME/homebrew/bin:$PATH
 
-This assumes you've installed gcc version 11, you can replace 11 with the version you've installed if this is not the case. It's recommended that you add the last line of the above to your ``~/.bashrc`` file, but it's not required. With the above complete, enter the c code directory and install the code::
+It's recommended that you add the last line of the above to your ``~/.bashrc`` file, but it's not required. Next, you need `XQuartz <https://www.xquartz.org/>`_ installed. With the above complete, enter the c code directory and install the code::
 
     cdc
+    make clean
     make install
 
 Photpipe should now be installed!

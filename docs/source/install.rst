@@ -111,8 +111,9 @@ On Mac, you can check for ``gcc`` in the same way as above. On newer systems, yo
    brew install gcc
    ln -s gcc-11 gcc
    ln -s gcc-11 cc
+   export PATH=$HOME/homebrew/bin:$PATH
 
-This assumes you've installed gcc version 11, you can replace 11 with the version you've installed if this is not the case. With the above complete, enter the c code directory and install the code::
+This assumes you've installed gcc version 11, you can replace 11 with the version you've installed if this is not the case. It's recommended that you add the last line of the above to your ``~/.bashrc`` file, but it's not required. With the above complete, enter the c code directory and install the code::
 
     cdc
     make install

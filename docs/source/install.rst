@@ -115,6 +115,7 @@ If ``gcc`` is not installed, follow the directions `here <https://linuxize.com/p
 
 On Mac, you can check for ``gcc`` in the same way as above. On newer systems, you will not get an error regardless but you may find that ``gcc`` has been aliased to ``clang``, which will not succeed. If this is the case, using ``homebrew`` to install gcc is recommended. Simply ``cd`` to the location you would like ``homebrew`` installed (maybe ``$HOME``, assumed below), and run the following::
 
+   cd $HOME
    mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
    cd $HOME/homebrew/bin
    ./brew install gcc@7

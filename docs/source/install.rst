@@ -101,11 +101,17 @@ alias example for LMC light echoes::
 Compiling C Code
 ================
 
-The first thing you must make sure of is that you have a ``gcc`` compiler installed. On linux this will likely be the case, but you can check with::
+The first thing you must make sure of is that you have a ``gcc`` compiler installed. 
+
+**Linux**
+
+On linux this will likely be the case, but you can check with::
 
    gcc --version
 
 If ``gcc`` is not installed, follow the directions `here <https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04/>`_. Photpipe compiles on ``gcc`` version 7, but not on version 11. 
+
+**Mac**
 
 On Mac, you can check for ``gcc`` in the same way as above. On newer systems, you will not get an error regardless but you may find that ``gcc`` has been aliased to ``clang``, which will not succeed. If this is the case, using ``homebrew`` to install gcc is recommended. Simply ``cd`` to the location you would like ``homebrew`` installed (maybe ``$HOME``, assumed below), and run the following::
 

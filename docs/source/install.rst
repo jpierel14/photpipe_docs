@@ -117,12 +117,16 @@ On Mac, you can check for ``gcc`` in the same way as above. On newer systems, yo
 
    mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
    cd $HOME/homebrew/bin
-   brew install gcc@7
+   ./brew install gcc@7
    ln -s gcc-7 gcc
    ln -s gcc-7 cc
    export PATH=$HOME/homebrew/bin:$PATH
 
-It's recommended that you add the last line of the above to your ``~/.bashrc`` file, but it's not required. Next, you need `XQuartz <https://www.xquartz.org/>`_ installed. With the above complete, enter the c code directory and install the code::
+**Make sure to add the last line of the above to your ``~/.bashrc`` file**. 
+
+Finally, you need `XQuartz <https://www.xquartz.org/>`_ installed. 
+
+With the above complete, enter the c code directory and install the code::
 
     cdc
     make install

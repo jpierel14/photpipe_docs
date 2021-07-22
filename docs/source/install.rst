@@ -123,7 +123,7 @@ On Mac, you can check for ``gcc`` in the same way as above. On newer systems, yo
    ln -s gcc-7 cc
    export PATH=$HOME/homebrew/bin:$PATH
 
-**Make sure to add the last line of the above to your ``~/.bashrc`` file**. 
+**Make sure to add the last line of the above to your** ``~/.bashrc`` **file**. 
 
 Finally, you need `XQuartz <https://www.xquartz.org/>`_ installed. 
 

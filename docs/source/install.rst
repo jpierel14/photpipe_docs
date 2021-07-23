@@ -109,7 +109,10 @@ On linux this will likely be the case, but you can check with::
 
    gcc --version
 
-If ``gcc`` is not installed, follow the directions `here <https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04/>`_. Photpipe compiles on ``gcc`` version 7, but not on version 11. 
+If ``gcc`` is not installed, follow the directions `here <https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04/>`_. Photpipe compiles on ``gcc`` version 7, but not on version 11, so you should get something like the following::
+
+   $ gcc --version
+   gcc (Homebrew GCC 7.5.0_4) 7.5.0
 
 **Mac**
 
@@ -123,7 +126,10 @@ On Mac, you can check for ``gcc`` in the same way as above. On newer systems, yo
    ln -s gcc-7 cc
    export PATH=$HOME/homebrew/bin:$PATH
 
-**Make sure to add the last line of the above to your** ``~/.bashrc`` **file**. 
+**Make sure to add the last line of the above to your** ``~/.bashrc`` **file**. Check that ``gcc`` was installed correctly by moving to a new directory and running the following::
+
+   $ gcc --version
+   gcc (Homebrew GCC 7.5.0_4) 7.5.0
 
 Finally, you need `XQuartz <https://www.xquartz.org/>`_ installed. 
 
@@ -132,7 +138,12 @@ With the above complete, enter the c code directory and install the code::
     cdc
     make install
 
-Photpipe should now be installed!
+Photpipe should now be installed! Check to make sure the installation was successful by searching for one of the binary files created during the make using something like ``which hotpants`` ::
+
+   $ which hotpants
+   /Users/jpierel/CodeBase/pipes/v20.0/photpipe/Cfiles/bin/darwin/hotpants
+
+
 
 
 

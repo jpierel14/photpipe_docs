@@ -24,26 +24,21 @@ Photpipe
 
 Photpipe is on bitbucket, make an account and ask A. Rest to add you to the repository. Then you can clone it with::
 
-   git clone https://arest@bitbucket.org/arest/photpipe.git
+   git clone https://<yourprofile>@bitbucket.org/arest/photpipe.git
 
 This command will put Photpipe into the current directory ``<pipedir>/photpipe``. 
 
 Inititalization
 ===============
 
-Each telescope/project has its own initialization 'sourceme' file. Any time one of these sourceme files are called, they overwrite the previous photpipe initialization, i.e. you can switch from one telescope/project to another. You can set up aliases to make this quick and easy::
-
-   iraf27) plhstproc1:/home/arest $ alias ledecamnoao
-   alias ledecamnoao='source  /ifs/cs/projects/armin1/pipe/v20.0/photpipe/config/DECAMNOAO/LE/LE.bash.sourceme'
-
-All of these sourceme files look very similar. First, the instrument (PIPE_INSTRUMEN), project (PIPENAME), and version (PIPE_VERSION) are defined::
+Each telescope/project has its own initialization 'sourceme' file. Any time one of these sourceme files are called, they overwrite the previous photpipe initialization, i.e. you can switch from one telescope/project to another. All of the sourceme files look very similar. First, the instrument (PIPE_INSTRUMEN), project (PIPENAME), and version (PIPE_VERSION) are defined such as the following::
 
    # define project and pipeversion
    export PIPE_INSTRUMENT=DECAMNOAO
    export PIPENAME=LE
    export PIPE_VERSION=v20.0
 
-These are used to define the two main directories, depending on which host system you are on::
+These are used to define the two main directories, depending on which host system you are on; defined as the following::
 
    if [[ $HOSTNAME =~ arminmac* ]] || [[  $HOSTNAME =~ lswlan* ]] || [[  $HOSTNAME =~ danis-iph* ]]; then
    export PIPE_SRC=/Users/arest/pipes/$PIPE_VERSION/photpipe
@@ -64,15 +59,19 @@ These are used to define the two main directories, depending on which host syste
       return 1;
    fi
 
-If you are on a new system, just add once an elif statement, and you are set. From then on, you just need to call the sourceme file, and all paths and environments are set! If you use astroconda, set ``LOCALPYTHONFLAG=1``, otherwise it tries to use the python within the pipeline, which is how we did it 10 years ago in order to avoide python version issues with the code. With astroconda, we have abandoned the photpipe python installation...
+All new users of photpipe must add their system to the sourceme file; just add another elif statement with your hostname and directory set up. If you use astroconda, set ``LOCALPYTHONFLAG=1``, otherwise it tries to use the python within the pipeline, which is how we did it 10 years ago in order to avoide python version issues with the code. With astroconda, we have abandoned the photpipe python installation...  
 
-All source code is in ``$PIPE_SRC=<photdir>/photpipe``, and the config files for the given instrument+projects are in::
+All source code is in ``$PIPE_SRC=<photdir>/photpipe``, hence the directory where you installed photpipe. The config files for the given instrument+projects are in::
 
    $PIPE_SRC/config/$PIPE_INSTRUMENT/$PIPENAME
 
-The data will be in ``$PIPE_DATA=<datadir>/$PIPE_VERSION/$PIPE_INSTRUMENT/$PIPENAME``
+The data will be in ``$PIPE_DATA=<datadir>/$PIPE_VERSION/$PIPE_INSTRUMENT/$PIPENAME``.
 
-There are a number of alias for convenience, which moves you around the source code and data directories::
+From then on, you just need to call the sourceme file, and all paths and environments are set! To call the sourceme file easily, set up aliases in your ./bashrc or other bash file where you want your aliases. For example the next block of code shows the alias for the telescope/project ledecamnoao::
+
+   alias ledecamnoao='source  /ifs/cs/projects/armin1/pipe/v20.0/photpipe/config/DECAMNOAO/LE/LE.bash.sourceme'
+
+There are a number of aliases in photpipe used for convenience, which moves you around the source code and data directories. After initializing a telescope/project, the following are aliases that can be used to navigate photpipe with more ease::
 
    cdconfig
    cddata
@@ -82,7 +81,7 @@ There are a number of alias for convenience, which moves you around the source c
    cdpy
    cdsrc
 
-For DECam light echoes using NOAO reduced images, we set up aliases for the individual targets::
+For DECam light echoes using NOAO reduced images, we set up the following aliases for the individual targets::
 
    cr, ch, kp, wb, ks, lmc, smc
 

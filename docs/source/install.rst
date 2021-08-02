@@ -67,9 +67,9 @@ All source code is in ``$PIPE_SRC=<photdir>/photpipe``, hence the directory wher
 
 The data will be in ``$PIPE_DATA=<datadir>/$PIPE_VERSION/$PIPE_INSTRUMENT/$PIPENAME``.
 
-From then on, you just need to call the sourceme file, and all paths and environments are set! To call the sourceme file easily, set up aliases in your ./bashrc or other bash file where you want your aliases. For example the next block of code shows the alias for the telescope/project ledecamnoao::
+From then on, you just need to call the sourceme file, and all paths and environments are set! To call the sourceme file easily, set up aliases in your ./bashrc or other bash file where you want your aliases. The following is an example for creating the alias for the telescope/project ledecamnoao::
 
-   alias ledecamnoao='source  /ifs/cs/projects/armin1/pipe/v20.0/photpipe/config/DECAMNOAO/LE/LE.bash.sourceme'
+   alias ledecamnoao='source  <photdir>/photpipe/config/DECAMNOAO/LE/LE.bash.sourceme'
 
 There are a number of aliases in photpipe used for convenience, which moves you around the source code and data directories. After initializing a telescope/project, the following are aliases that can be used to navigate photpipe with more ease::
 
@@ -85,7 +85,7 @@ For DECam light echoes using NOAO reduced images, we set up the following aliase
 
    cr, ch, kp, wb, ks, lmc, smc
 
-alias example for LMC light echoes::
+The following is an alias example for LMC light echoes::
 
    (iraf27) plhstproc1:/home/arest $ alias lelmc
    alias lelmc='source  /ifs/cs/projects/armin1/pipe/v20.0/photpipe/config/DECAMNOAO/LE/LE.bash.sourceme lmc'

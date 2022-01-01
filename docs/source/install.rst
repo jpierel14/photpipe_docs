@@ -27,6 +27,7 @@ Here is an example of a astroconda installation that works::
    pip install ipython jupyter matplotlib pylint pandas
    conda install -c conda-forge astroplan
 
+   # install sextractor if it doesn't get compiled with the rest of the C-code!
    conda create -n sextractor -c https://ssb.stsci.edu/astroconda sextractor
    #conda activate sextractor
    #see https://stsci.service-now.com/stars?id=kb_article&sys_id=9b9073ab1b6be410e4c6edb0604bcb95

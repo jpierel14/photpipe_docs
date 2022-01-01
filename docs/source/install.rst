@@ -19,6 +19,29 @@ We recommend using `astroconda to install <http://astroconda.readthedocs.io/en/l
 - Otherwise we use either the `standard astroconda installation <https://astroconda.readthedocs.io/en/latest/installation.html#standard-install>`_ with the latest python 3.X, or the `STScI pipeline software stack <https://astroconda.readthedocs.io/en/latest/installation.html#pipeline-install-jump>`_
 - Make sure astropy and matplotlib are available
 
+Here is an example of a astroconda installation that works:
+
+   conda config --add channels http://ssb.stsci.edu/astroconda
+   conda create -n conda_photpipe python=3.7 stsci notebook astropy matplotlib
+   #conda install --name conda_photpipe astropy matplotlib pandas
+   pip install ipython jupyter matplotlib pylint pandas
+   conda install -c conda-forge astroplan
+
+   conda create -n sextractor -c https://ssb.stsci.edu/astroconda sextractor
+   #conda activate sextractor
+   #see https://stsci.service-now.com/stars?id=kb_article&sys_id=9b9073ab1b6be410e4c6edb0604bcb95
+
+   condor:
+   pip install --force git+https://github.com/jhunkeler/htc_utils
+   pip install --upgrade htc_utils
+   export PATH=$PATH:/usr/sbin
+   (add path to .bashrc or .myalias)
+
+   conda activate conda_photpipe
+   if this doesn't work, do a 
+   conda init bash
+
+
 Photpipe
 ========
 

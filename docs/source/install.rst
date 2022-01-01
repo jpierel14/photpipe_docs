@@ -19,7 +19,7 @@ We recommend using `astroconda to install <http://astroconda.readthedocs.io/en/l
 - Otherwise we use either the `standard astroconda installation <https://astroconda.readthedocs.io/en/latest/installation.html#standard-install>`_ with the latest python 3.X, or the `STScI pipeline software stack <https://astroconda.readthedocs.io/en/latest/installation.html#pipeline-install-jump>`_
 - Make sure astropy and matplotlib are available
 
-Here is an example of a astroconda installation that works:
+Here is an example of a astroconda installation that works::
 
    conda config --add channels http://ssb.stsci.edu/astroconda
    conda create -n conda_photpipe python=3.7 stsci notebook astropy matplotlib

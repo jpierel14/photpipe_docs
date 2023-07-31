@@ -3,7 +3,7 @@ Examples
 ********
 
 DECamNOAO
------
+----------
 
 There are three steps to reduce DECamNOAO data: downloading the data, the photometric step, & the difference step. The following will take you through the steps to run the stages. Please note that these examples are for the YSE collaboration, which you may not be a part of. If you are not a part of YSE, contact Armin Rest to learn what the correct commands for your collaboration are.
 
